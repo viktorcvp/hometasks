@@ -24,17 +24,3 @@ else Console.WriteLine("число" + b + "больше" + a);
 //44 5 78 -> 78
 //22 3 9 -> 22
 
-Console.WriteLine("введите первое число v");
-int v = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("введите второе число n");
-int n = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("введите третье число d");
-int d = Convert.ToInt32(Console.ReadLine());
-
-if (v > n)
-{
-    Console.WriteLine(v + "больше" + n);
-}
-
-else if (n > v) Console.WriteLine("число" + n + "больше" + v);
-
