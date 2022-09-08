@@ -24,3 +24,17 @@ else Console.WriteLine("число" + b + "больше" + a);
 //44 5 78 -> 78
 //22 3 9 -> 22
 
+void numMax()
+{
+    Console.WriteLine("введите первое число a");
+    int a = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("введите второе число b");
+    int b = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("введите третье число с");
+    int c = Convert.ToInt32(Console.ReadLine());
+
+    if ((b > a) && (b > c)) Console.WriteLine($"max = {b}");
+    else if (c > a && c > b) Console.WriteLine($"max = {c}");
+    else Console.WriteLine($"max = {a}");
+}
+numMax();
