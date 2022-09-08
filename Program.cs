@@ -38,3 +38,23 @@ void numMax()
     else Console.WriteLine($"max = {a}");
 }
 numMax();
+
+
+//Напишите программу, которая на вход принимает число и выдаёт, является ли число чётным (делится ли оно на два без остатка).
+
+//4 -> да
+//-3 -> нет
+//7 -> нет
+
+
+void rest()
+{
+    Console.WriteLine("введите  число a");
+    int a = Convert.ToInt32(Console.ReadLine());
+
+    if (a % 2 == 0) Console.WriteLine("число четное");
+    else if (a % 2 != 0) Console.WriteLine("число нечетное");
+
+
+}
+rest();
