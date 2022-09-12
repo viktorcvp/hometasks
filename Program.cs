@@ -78,3 +78,41 @@ void res()
     }
 }
 res();
+
+
+//Напишите программу, которая принимает на вход трёхзначное число
+//и на выходе показывает вторую цифру этого числа
+
+void scndCount(int num)
+{
+    int result = (num % 100 - num % 10) / 10;
+    System.Console.WriteLine("второе число" + result);
+}
+
+Console.Write("Введите трехзначное число: ");
+int num = Convert.ToInt32(Console.ReadLine());
+
+
+scndCount(num);
+
+
+
+
+//Напишите программу, которая выводит третью цифру заданного числа
+//или сообщает, что третьей цифры нет.
+
+
+Console.WriteLine("введите число ");
+int x = Convert.ToInt32(Console.ReadLine());
+string str = x.ToString();
+if (x < 100) Console.WriteLine(" третьeй цифры нет");
+else Console.WriteLine(" третья цифра" + str[2]);
+
+
+//Напишите программу, которая принимает на вход цифру,
+//обозначающую день недели, и проверяет, является ли этот день выходным.
+
+Console.WriteLine("введите число дня недели");
+int x = Convert.ToInt32(Console.ReadLine());
+if (x == 6 | x == 7) Console.WriteLine("день выходной");
+else Console.WriteLine("день не выходной");
