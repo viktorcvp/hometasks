@@ -116,3 +116,116 @@ Console.WriteLine("введите число дня недели");
 int x = Convert.ToInt32(Console.ReadLine());
 if (x == 6 | x == 7) Console.WriteLine("день выходной");
 else Console.WriteLine("день не выходной");
+
+//Напишите программу, которая принимает на вход пятизначное число и
+// проверяет, является ли оно палиндромом.
+
+//14212 -> нет
+
+//12821 -> да
+
+//23432 -> да
+
+
+void palind()
+{
+    string palindrome(long num)
+    {
+        string result;
+        int j = 0;
+        int k = 0;
+        string mutable = Convert.ToString(num);
+        if (mutable.Length % 2 != 0) k = 1;
+        for (int i = 0; i < mutable.Length / 2; i++)
+        {
+            if (mutable[i] == mutable[mutable.Length - i - 1]) j++;
+        }
+        if (j * 2 + k == mutable.Length) result = "Число палиндром";
+        else result = "Число не палиндром";
+        return result;
+    }
+    try
+    {
+        System.Console.Write("Введите число = ");
+        long num = Convert.ToInt64(Console.ReadLine());
+        System.Console.WriteLine(palindrome(num));
+    }
+    catch
+    {
+        System.Console.WriteLine("Введено не число, или число больше, чем можно вместить ");
+    }
+}
+
+palind();
+//Напишите программу, которая принимает на вход координаты двух точек и
+// находит расстояние между ними в 3D пространстве.
+
+//A (3,6,8); B (2,1,-7), -> 15.84
+
+//A (7,-5, 0); B (1,-1,9) -> 11.53
+
+void graphic()
+{
+    double Distance(int N)
+    {
+        // Задаем координаты точки №1
+        int[] first = new int[N];
+        for (int i = 0; i < N; i++)
+        {
+            System.Console.Write("Введите координату первой точки на оси ==");
+            first[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        // Задаем координаты точки №2
+        int[] second = new int[N];
+        for (int i = 0; i < N; i++)
+        {
+            System.Console.Write("Введите координату второй точки на оси ==");
+            second[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        //Находим расстояние
+        double sum = 0;
+        for (int i = 0; i < N; i++)
+        {
+            sum = sum + Math.Pow((second[i] - first[i]), 2);
+        }
+        sum = Math.Round(Math.Sqrt(sum), 2);
+        return sum;
+    }
+    try
+    {
+        System.Console.Write("Введите число точек==");
+        int N = Convert.ToInt32(Console.ReadLine());
+        System.Console.WriteLine(Distance(N));
+    }
+    catch
+    {
+        System.Console.WriteLine("Введено не число, или число больше, чем может вместить");
+    }
+}
+graphic();
+
+//Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+
+void cub()
+{
+    string cube(int num)
+    {
+        string result = $"{num} -> 1";
+        for (int i = 2; i <= num; i++)
+        {
+            result = result + $", {Math.Pow(i, 3)}";
+        }
+        return result;
+    }
+    try
+    {
+        System.Console.Write("Введите число = ");
+        int num = Math.Abs(Convert.ToInt32(Console.ReadLine()));
+        System.Console.WriteLine(cube(num));
+    }
+    catch
+    {
+        System.Console.WriteLine("Вводите целочисленное значение");
+    }
+}
+cub();
