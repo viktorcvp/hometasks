@@ -228,8 +228,8 @@ void cub()
         System.Console.WriteLine("Вводите целочисленное значение");
     }
 }
-<<<<<<< HEAD
-cub();
+
+
 
 //Напишите цикл, который принимает на вход два числа (A и B) и
 // возводит число A в натуральную степень B.
@@ -427,3 +427,61 @@ void difference()
     System.Console.WriteLine($"Разница между наибольшим и наименьшим элементами массива : {Math.Round(diff(newMass), 2)}");
 }
 difference();
+
+// Пользователь вводит с клавиатуры M чисел.
+// Посчитайте, сколько чисел больше 0 ввёл пользователь.
+Console.WriteLine($"Введи количество чисел): ");
+int m = Convert.ToInt32(Console.ReadLine());
+int[] massNum = new int[m];
+
+void Numbers(int m)
+{
+    for (int i = 0; i < m; i++)
+    {
+        Console.WriteLine($"Введи {i + 1} число: ");
+        massNum[i] = Convert.ToInt32(Console.ReadLine());
+    }
+}
+
+
+int Comparison(int[] massNum)
+{
+    int count = 0;
+    for (int i = 0; i < massNum.Length; i++)
+    {
+        if (massNum[i] > 0) count += 1;
+    }
+    return count;
+}
+
+Numbers(m);
+
+Console.WriteLine($"Введено чисел больше 0: {Comparison(massNum)} ");
+
+
+
+//Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, 
+//заданных уравнениями y = k1 * x + b1, y = k2 * x + b2;
+// значения b1, k1, b2 и k2 задаются пользователем.
+
+void intersection()
+{
+    double[] crossPt(double k1, double k2, double b1, double b2)
+    {
+        double[] result = new double[2];
+        result[0] = (b1 - b2) / (k2 - k1);
+        result[1] = k1 * result[0] + b1;
+        return result;
+    }
+    System.Console.Write(" введите коэфициент k1 ");
+    double k1 = Convert.ToDouble(Console.ReadLine());
+    System.Console.Write(" введите коэфициент b1 ");
+    double b1 = Convert.ToDouble(Console.ReadLine());
+    System.Console.Write(" введите коэфициент k2 ");
+    double k2 = Convert.ToDouble(Console.ReadLine());
+    System.Console.Write(" введите коэфициент b2 ");
+    double b2 = Convert.ToDouble(Console.ReadLine());
+    double[] answer = crossPt(k1, k2, b1, b2);
+    System.Console.WriteLine($"Точка пересечения = {answer[0]},  Y = {answer[1]}");
+}
+intersection();
